@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.bpiwowar</groupId>
+    <artifactId>qia</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.bpiwowar</groupId>
+            <artifactId>argj</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.terrier</groupId>
+            <artifactId>terrier</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- Javadoc report -->
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <links>
+                        <link>http://java.sun.com/j2se/1.6.0/docs/api</link>
+                    </links>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+
+    <!-- Developers -->
+    <developers>
+        <developer>
+            <id>bpiwowar</id>
+            <name>Benjamin Piwowarski</name>
+            <email>benjamin.piwowarski@gmail.com</email>
+            <url>http://www.bpiwowar.net/</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>0</timezone>
+            <properties>
+            </properties>
+        </developer>
+    </developers>
+
+
+
+</project>
