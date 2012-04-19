@@ -79,19 +79,19 @@
     </build>
 
     <dependencies>
-        <!-- Command line argument parser -->
-        <dependency>
-            <groupId>net.bpiwowar</groupId>
-            <artifactId>argj</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-        </dependency>
-
         <!-- Kernel Quantum Library -->
         <dependency>
             <groupId>net.bpiwowar</groupId>
             <artifactId>kqp</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <type>nar</type>
+        </dependency>
+
+        <!-- Command line argument parser -->
+        <dependency>
+            <groupId>net.bpiwowar</groupId>
+            <artifactId>argj</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
 
         <!-- IR platform: Terrier -->
