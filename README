@@ -1,0 +1,19 @@
+Code for the Quantum Information Access (QIA)
+
+This is the repository for the new QIA framework that:
+- is built on top of Terrier (>3.5) and the Kernel Quantum Probability library (KQP);
+- has experimaestro scripts to easily configure and run experiments
+
+
+INSTALLATION
+
+In order to build and use QIA, you need to have installed:
+- Java (> 6.0)
+- Maven (> 3.0)
+- CMake
+- A C++ compiler
+- Swig
+- (recommended to run experiments) experimaestro
+
+1) Download and build KQP
+2) Download and build QIA

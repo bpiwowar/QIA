@@ -26,12 +26,72 @@
     <version>0.1-SNAPSHOT</version>
     <url>http://github.com/bpiwowar/QIA</url>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>duns</id>
+            <name>Duns nar plugin repository</name>
+            <url>http://duns.github.com/maven-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <build>
+        <plugins>
+            <!-- NAR plugin -->
+            <plugin>
+                <artifactId>maven-nar-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+
+            <!-- Assembly -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assemble/bin.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+
+            <!-- Jar manager -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>Test</mainClass>
+                            <addDefaultImplementationEntries>true
+                            </addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true
+                            </addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
     <dependencies>
         <!-- Command line argument parser -->
         <dependency>
             <groupId>net.bpiwowar</groupId>
             <artifactId>argj</artifactId>
             <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Kernel Quantum Library -->
+        <dependency>
+            <groupId>net.bpiwowar</groupId>
+            <artifactId>kqp</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>nar</type>
         </dependency>
 
         <!-- IR platform: Terrier -->

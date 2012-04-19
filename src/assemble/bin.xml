@@ -1,0 +1,30 @@
+<assembly>
+	<id>bin</id>
+	<formats>
+		<format>dir</format>
+	</formats>
+	
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<fileSets>
+
+		<!--<fileSet>-->
+			<!--<directory>target/nar/jni-renaissance-0.0.1-SNAPSHOT-x86_64-MacOSX-gpp-jni/lib/x86_64-MacOSX-gpp/jni-->
+			<!--</directory>-->
+			<!--<outputDirectory>lib/x86_64-MacOSX-g++</outputDirectory>-->
+		<!--</fileSet>-->
+
+
+	</fileSets>
+
+
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+		</dependencySet>
+
+	</dependencySets>
+
+
+</assembly>
