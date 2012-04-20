@@ -8,14 +8,18 @@
 
 	<fileSets>
 
-		<!--<fileSet>-->
-			<!--<directory>target/nar/jni-renaissance-0.0.1-SNAPSHOT-x86_64-MacOSX-gpp-jni/lib/x86_64-MacOSX-gpp/jni-->
-			<!--</directory>-->
-			<!--<outputDirectory>lib/x86_64-MacOSX-g++</outputDirectory>-->
-		<!--</fileSet>-->
+		<fileSet>
+			<directory>target/nar/${kqp.name}-${kqp.version}-x86_64-MacOSX-jni/lib</directory>
+			<outputDirectory>lib/x86_64-MacOSX</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/nar/${kqp.name}-${kqp.version}-x86_64-Linux-jni/lib</directory>
+            <outputDirectory>lib/x86_64-Linux</outputDirectory>
+        </fileSet>
 
 
-	</fileSets>
+    </fileSets>
 
 
 	<dependencySets>

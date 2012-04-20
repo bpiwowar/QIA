@@ -26,6 +26,11 @@
     <version>0.1-SNAPSHOT</version>
     <url>http://github.com/bpiwowar/QIA</url>
 
+    <properties>
+        <kqp.name>kqp</kqp.name>
+        <kqp.version>1.0.0-SNAPSHOT</kqp.version>
+    </properties>
+
     <pluginRepositories>
         <pluginRepository>
             <id>duns</id>
@@ -44,15 +49,43 @@
             <plugin>
                 <artifactId>maven-nar-plugin</artifactId>
                 <extensions>true</extensions>
+                <configuration>
+                    <classifiers>
+                        <!--<classifier>x86-Windows-msvc</classifier>-->
+                        <classifier>x86_64-MacOSX-g++</classifier>
+                        <!--<classifier>i386-Linux-g++</classifier>-->
+                    </classifiers>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>nar-download</goal>
+                            <goal>nar-unpack</goal>
+                            <!--<goal>nar-assembly</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- Assembly -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.1</version>
                 <configuration>
                     <descriptors>
                         <descriptor>src/assemble/bin.xml</descriptor>
                     </descriptors>
+                </configuration>
+            </plugin>
+
+            <!-- Java 6 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
 
@@ -61,10 +94,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
+                    <outputDirectory>
+                        ${project.build.directory}/${project.build.finalName}-bin.dir
+                    </outputDirectory>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>Test</mainClass>
+                            <mainClass>bpiwowar.experiments.Run</mainClass>
                             <addDefaultImplementationEntries>true
                             </addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true
@@ -82,8 +118,8 @@
         <!-- Kernel Quantum Library -->
         <dependency>
             <groupId>net.bpiwowar</groupId>
-            <artifactId>kqp</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <artifactId>${kqp.name}</artifactId>
+            <version>${kqp.version}</version>
             <type>nar</type>
         </dependency>
 
